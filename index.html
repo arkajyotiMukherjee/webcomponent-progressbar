@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Web Components</title>
+
+    <script src="progressbar.js"></script>
+</head>
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <h1>Web Components</h1>
+    <h2>How Much is Ritik getting fucked</h2>
+
+    <progress-bar></progress-bar>
+
+    <h2 class="done">Note yet completely fucked</h2>
+    
+    <script>
+        (function() {
+            var progress = document.querySelector('progress-bar'),
+                complete = 0;
+            let done = document.querySelector('.done')
+            
+            var progressInterval = setInterval(() => {
+                complete += 1
+
+                if (complete <= 100) {
+                    progress.setAttribute('complete', complete)
+                    
+                    done.innerHTML = `He is only ${complete}% fucked`
+
+                } else {
+                    
+                    done.innerHTML = `Ok! Now he is a 100% Fucked`
+
+                    clearInterval(progressInterval)
+                }
+            }, 100)
+        })()
+    
+    </script>
+    
+</body>
+</html>
